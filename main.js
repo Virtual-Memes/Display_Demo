@@ -1,6 +1,6 @@
         var Width=new Array();
         var Url=new Array();
-        var ExchangeT=60000;
+        var ExchangeT=10000;
         var count=1;
         var Max=8;
         Width[0]="1920px";
