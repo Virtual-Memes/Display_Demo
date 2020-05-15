@@ -28,6 +28,8 @@
         Url[7]="url(ex8.gif)";
         $(document).ready(function(){
             setInterval(Time,ExchangeT);
+            time();
+            setInterval(time,1000);
         })
         function Time(){
             $("#Cover").animate({opacity:"1"},1500,function(){
@@ -39,4 +41,26 @@
             if(count>=Max){
                 count=0;
             }
+        }
+        function time() {
+            var mydate = new Date();
+            var year=mydate.getFullYear();
+            var month=mydate.getMonth();
+            var date=mydate.getDate();
+            var day=mydate.getDay();
+            var hour=mydate.getHours();
+            var minute=mydate.getMinutes();
+            var second=mydate.getSeconds();
+            var Week = ['日','一','二','三','四','五','六'];
+            if(second<10){
+                second="0"+second;
+            }
+            if(hour<10){
+                hour="0"+hour;
+            }
+            if(minute<10){
+                minute="0"+minute;
+            }
+            var FullT=year+"年"+month+"月"+date+"日"+"     "+"星期"+Week[day]+"     "+hour+":"+minute+":"+second;
+            $("#Time").text(FullT);
         }
